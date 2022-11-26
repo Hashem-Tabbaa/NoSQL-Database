@@ -1,0 +1,10 @@
+{
+  "databases":[],
+  "users": {
+    "hashem":{
+      "password":"admin",
+      "role":"admin",
+      "username":"hashem"
+    }
+  }
+}
