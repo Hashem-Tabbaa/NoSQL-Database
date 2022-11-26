@@ -7,10 +7,8 @@ import org.springframework.stereotype.Service;
 
 @Service
 public class AuthenticationService {
-    public String authenticateUser(User user) throws Exception {
+    public String authenticateUser(User user, String nodeURL) throws Exception {
         DBConnection dbConnection = new DBConnection(user);
-        String nodeURL = dbConnection.getNodeURL();
-        DatabaseOperations databaseOperations = new DatabaseOperations(user, nodeURL);
-        return databaseOperations.login();
+        return dbConnection.login(user, nodeURL);
     }
 }

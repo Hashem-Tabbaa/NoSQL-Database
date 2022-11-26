@@ -14,4 +14,7 @@ public class DBConnection {
         return ConnectionRequest.retrieveNodeURL(user);
     }
 
+    public String login(User user, String nodeURL) throws Exception {
+        return ConnectionRequest.login(user, nodeURL);
+    }
 }

@@ -1,5 +1,10 @@
 package com.database.atypon.DBMS.database_system;
 
+import lombok.Getter;
+import lombok.Setter;
+
+@Setter
+@Getter
 public class Database {
 
     private String name;
@@ -7,13 +12,7 @@ public class Database {
     public Database(String name){
         this.name = name;
     }
+    public Database(){
 
-    public String getName(){
-        return this.name;
     }
-
-    public void setName(String name){
-        this.name = name;
-    }
-
 }

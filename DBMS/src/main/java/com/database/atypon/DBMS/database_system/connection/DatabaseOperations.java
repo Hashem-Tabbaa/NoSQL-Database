@@ -11,19 +11,14 @@ import java.util.HashMap;
 public class DatabaseOperations {
 
     private final String nodeURL;
-    private User user;
     private String token;
 
-    public DatabaseOperations(User user, String nodeURL) throws Exception {
+    public DatabaseOperations(String nodeURL, String token){
         this.nodeURL = nodeURL;
-        this.user = user;
+        this.token = token;
     }
 
     // This method is used to log in to the DB system by retrieving the token from the node
-    public String login() throws Exception {
-        this.token = ConnectionRequest.login(user, nodeURL);
-        return this.token;
-    }
     public String createDatabase(String databaseName) throws Exception {
         if(token == null)
             throw new Exception("User not logged in");

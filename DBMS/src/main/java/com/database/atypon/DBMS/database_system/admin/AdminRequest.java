@@ -5,8 +5,11 @@ import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpHeaders;
 import org.springframework.web.client.RestTemplate;
 
+import java.util.LinkedHashMap;
+import java.util.Vector;
+
 public class AdminRequest {
-    public static String createDatabase(String database, String token, String nodeURL) {
+    public static String createDatabase(String database, String token, String nodeURL) throws Exception {
         RestTemplate restTemplate = new RestTemplate();
 
         String url = nodeURL + PathBuilder.buildCreateDatabasePath(database);
@@ -15,6 +18,10 @@ public class AdminRequest {
         headers.add("Authorization", token);
         HttpEntity request = new HttpEntity(headers);
 
-        return restTemplate.postForObject(url, request, String.class);
+        Vector<LinkedHashMap> responses = restTemplate.postForObject(url, request, Vector.class);
+        LinkedHashMap response = responses.get(0);
+        if(response.get("responseType").equals("ERROR"))
+            throw new Exception(response.get("message").toString());
+        return response.get("message").toString();
     }
 }

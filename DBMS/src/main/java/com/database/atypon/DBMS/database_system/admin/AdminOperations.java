@@ -5,7 +5,7 @@ import com.database.atypon.DBMS.model.User;
 
 public class AdminOperations {
 
-    public static String createDatabase(String database, String token, String nodeURL){
+    public static String createDatabase(String database, String token, String nodeURL) throws Exception {
         return AdminRequest.createDatabase(database, token, nodeURL);
     }
 
