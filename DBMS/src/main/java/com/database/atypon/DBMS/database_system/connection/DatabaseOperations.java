@@ -31,7 +31,7 @@ public class DatabaseOperations {
         return AdminOperations.createNewUser(user);
     }
     public String createSchema(String databaseName, String schemaName,
-                               HashMap<String, String> columns) throws Exception {
+                               JSONObject columns) throws Exception {
         if(token == null)
             throw new Exception("User not logged in");
         return WriteOperations.createSchema(databaseName, schemaName, columns, token, nodeURL);

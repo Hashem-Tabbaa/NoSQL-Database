@@ -10,7 +10,7 @@ import java.util.HashMap;
 public class WriteOperations {
 
     public static String createSchema(String databaseName, String schemaName,
-                                      HashMap<String, String> schema,
+                                      JSONObject schema,
                                       String token, String nodeURL) {
 
         JSONObject schemaJson = new JSONObject();
