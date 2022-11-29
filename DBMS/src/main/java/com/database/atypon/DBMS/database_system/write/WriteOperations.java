@@ -13,10 +13,7 @@ public class WriteOperations {
                                       JSONObject schema,
                                       String token, String nodeURL) {
 
-        JSONObject schemaJson = new JSONObject();
-        schemaJson.put("schemaName", schemaName);
-        schemaJson.put("schema", schema);
-        return WriteRequest.createSchema(databaseName,schemaJson, token, nodeURL);
+        return WriteRequest.createSchema(databaseName,schema, token, nodeURL);
     }
     public static String createDocument(String databaseName, String schemaName,
                                         HashMap<Object, Object> document,

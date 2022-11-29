@@ -18,6 +18,7 @@ public class WriteController {
     public String createSchema(Schema schema, HttpServletRequest request){
         String token = (String) request.getSession().getAttribute("token");
         String nodeURL = (String) request.getSession().getAttribute("nodeURL");
+        System.out.println(schema.getSchema());
         try{
             System.out.println(writeService.createSchema(schema, token, nodeURL));
         }catch (Exception e){
