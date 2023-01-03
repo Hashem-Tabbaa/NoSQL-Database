@@ -1,6 +1,6 @@
 
 # Decentralized Cluster-Based NoSQL DB System
-##(Atypon Capstone Project)
+## (Atypon Capstone Project)
 
 
 ## Project Description
