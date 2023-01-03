@@ -1,7 +1,6 @@
 
-# Project Title
-Decentralized Cluster-Based NoSQL DB System
-(Atypon Capstone Project)
+# Decentralized Cluster-Based NoSQL DB System
+##(Atypon Capstone Project)
 
 
 ## Project Description
